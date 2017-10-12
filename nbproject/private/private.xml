@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Code-JavaWeb/Netbeans/BookShop_v1/src/java/Model/entities/Book.java</file>
-            <file>file:/E:/Code-JavaWeb/Netbeans/BookShop_v1/src/java/Controller/CartServlet.java</file>
-            <file>file:/E:/Code-JavaWeb/Netbeans/BookShop_v1/src/java/Common/Constant.java</file>
-            <file>file:/E:/Code-JavaWeb/Netbeans/BookShop_v1/web/shop.jsp</file>
-            <file>file:/E:/Code-JavaWeb/Netbeans/BookShop_v1/web/JS/cart.js</file>
-            <file>file:/E:/Code-JavaWeb/Netbeans/BookShop_v1/src/java/Model/entities/Cart.java</file>
+            <file>file:/E:/Git/BookStore/BookStore/src/java/Controller/CartServlet.java</file>
+            <file>file:/E:/Git/BookStore/BookStore/src/java/Controller/Checkout.java</file>
+            <file>file:/E:/Git/BookStore/BookStore/src/java/Controller/Remove.java</file>
+            <file>file:/E:/Git/BookStore/BookStore/src/java/Controller/DetailServlet.java</file>
+            <file>file:/E:/Git/BookStore/BookStore/web/cart.jsp</file>
+            <file>file:/E:/Git/BookStore/BookStore/web/index.jsp</file>
+            <file>file:/E:/Git/BookStore/BookStore/web/shop.jsp</file>
         </group>
     </open-files>
 </project-private>

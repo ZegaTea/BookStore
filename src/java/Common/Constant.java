@@ -16,4 +16,6 @@ public class Constant {
     
     public static final String CART_SESSION = "cart";
     public static final String CHECK_SESSION = "check";
+    public static final String COST_SESSION = "cost";
+    public static final String CHECKOUT_SESSION = "success";
 }

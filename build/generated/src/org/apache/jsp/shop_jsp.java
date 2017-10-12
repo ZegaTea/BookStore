@@ -44,31 +44,47 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write('\n');
-      out.write('\n');
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "header.jsp", out, false);
-      out.write("\n");
-      out.write("\n");
-      out.write("    <div class=\"product-big-title-area\">\n");
-      out.write("        <div class=\"container\">\n");
-      out.write("            <div class=\"row\">\n");
-      out.write("                <div class=\"col-md-12\">\n");
-      out.write("                    <div class=\"product-bit-title text-center\">\n");
-      out.write("                        <h2>Shop</h2>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("    <div class=\"single-product-area\">\n");
-      out.write("        <div class=\"zigzag-bottom\"></div>\n");
-      out.write("        <div class=\"container\">\n");
-      out.write("            <div class=\"row\">\n");
-      out.write("\n");
-      out.write("            ");
+      out.write('\r');
+      out.write('\n');
 
+    if (session.getAttribute(Common.Constant.CHECK_SESSION) != null) {
+        String check = session.getAttribute(Common.Constant.CHECK_SESSION).toString();
+        if (check.equals("true")) {
+
+      out.write("\r\n");
+      out.write("<script>\r\n");
+      out.write("    alert(\"Thêm gi? hàng thành công\")\r\n");
+      out.write("</script>\r\n");
+
+    session.setAttribute(Common.Constant.CHECK_SESSION, "false");
+        }
+    }
+
+
+      out.write("\r\n");
+      out.write("<div class=\"product-big-title-area\">\r\n");
+      out.write("    <div class=\"container\">\r\n");
+      out.write("        <div class=\"row\">\r\n");
+      out.write("            <div class=\"col-md-12\">\r\n");
+      out.write("                <div class=\"product-bit-title text-center\">\r\n");
+      out.write("                    <h2>Shop</h2>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<div class=\"single-product-area\">\r\n");
+      out.write("    <div class=\"zigzag-bottom\"></div>\r\n");
+      out.write("    <div class=\"container\">\r\n");
+      out.write("        <div class=\"row\">\r\n");
+      out.write("\r\n");
+      out.write("            ");
                 BookDao bookDao = new BookDao();
                 List<Book> list = bookDao.getListAllBook();
                 for (Book item : list) {
@@ -82,36 +98,38 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
                             + "</div></div></div>");
                 }
             
-      out.write("\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"row\">\n");
-      out.write("            <div class=\"col-md-12\">\n");
-      out.write("                <div class=\"product-pagination text-center\">\n");
-      out.write("                    <nav>\n");
-      out.write("                        <ul class=\"pagination\">\n");
-      out.write("                            <li>\n");
-      out.write("                                <a href=\"#\" aria-label=\"Previous\">\n");
-      out.write("                                    <span aria-hidden=\"true\">&laquo;</span>\n");
-      out.write("                                </a>\n");
-      out.write("                            </li>\n");
-      out.write("                            <li><a href=\"#\">1</a></li>\n");
-      out.write("                            <li><a href=\"#\">2</a></li>\n");
-      out.write("                            <li><a href=\"#\">3</a></li>\n");
-      out.write("                            <li><a href=\"#\">4</a></li>\n");
-      out.write("                            <li><a href=\"#\">5</a></li>\n");
-      out.write("                            <li>\n");
-      out.write("                                <a href=\"#\" aria-label=\"Next\">\n");
-      out.write("                                    <span aria-hidden=\"true\">&raquo;</span>\n");
-      out.write("                                </a>\n");
-      out.write("                            </li>\n");
-      out.write("                        </ul>\n");
-      out.write("                    </nav>                        \n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <div class=\"row\">\r\n");
+      out.write("            <div class=\"col-md-12\">\r\n");
+      out.write("                <div class=\"product-pagination text-center\">\r\n");
+      out.write("                    <nav>\r\n");
+      out.write("                        <ul class=\"pagination\">\r\n");
+      out.write("                            <li>\r\n");
+      out.write("                                <a href=\"#\" aria-label=\"Previous\">\r\n");
+      out.write("                                    <span aria-hidden=\"true\">&laquo;</span>\r\n");
+      out.write("                                </a>\r\n");
+      out.write("                            </li>\r\n");
+      out.write("                            <li><a href=\"#\">1</a></li>\r\n");
+      out.write("                            <li><a href=\"#\">2</a></li>\r\n");
+      out.write("                            <li><a href=\"#\">3</a></li>\r\n");
+      out.write("                            <li><a href=\"#\">4</a></li>\r\n");
+      out.write("                            <li><a href=\"#\">5</a></li>\r\n");
+      out.write("                            <li>\r\n");
+      out.write("                                <a href=\"#\" aria-label=\"Next\">\r\n");
+      out.write("                                    <span aria-hidden=\"true\">&raquo;</span>\r\n");
+      out.write("                                </a>\r\n");
+      out.write("                            </li>\r\n");
+      out.write("                        </ul>\r\n");
+      out.write("                    </nav>                        \r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<script>\r\n");
+      out.write("\r\n");
+      out.write("</script>\r\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "footer.jsp", out, false);
       out.write(' ');
     } catch (Throwable t) {

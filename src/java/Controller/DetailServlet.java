@@ -5,30 +5,23 @@
  */
 package Controller;
 
+import Model.dao.BookDao;
+import Model.entities.Book;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import Common.Constant;
-import Model.dao.BookDao;
-import java.util.List;
-import Model.entities.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author dovan
  */
-@WebServlet("/CartServlet")
-public class CartServlet extends HttpServlet {
+@WebServlet("/DetailServlet")
+public class DetailServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,53 +35,12 @@ public class CartServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("utf-8");
-        HttpSession session = request.getSession();
-        String bookId = request.getParameter("id");
-        int id = Integer.valueOf(bookId);
-        String quantity = request.getParameter("quantity");
-        String title = request.getParameter("title");
-        String link = request.getParameter("link");
-        String price = request.getParameter("price");
-        BookCart bc;
-        BookDao bookDao = new BookDao();
-        if (quantity == null) {
-            bc = bookDao.getBookInfor(id);
-        } else {
-            bc = new BookCart(id, link, title, Float.valueOf(price), Integer.valueOf(quantity));
-        }
-
-        List<BookCart> cart;
-        if (session.getAttribute(Constant.CART_SESSION) == null) {
-            cart = new ArrayList<>();
-            cart.add(bc);
-        } else {
-            cart = (ArrayList<BookCart>) session.getAttribute(Constant.CART_SESSION);
-            int state = 0;
-            for(int i = 0; i< cart.size(); i++){
-                if(cart.get(i).getId() == id){
-                    int totalQuantities = cart.get(i).getQuantity() + Integer.valueOf(quantity);
-                    bc.setQuantity(totalQuantities);
-                    cart.set(i, bc);
-                    state = 1;
-                    break;
-                }
-            }
-            if(state == 0) cart.add(bc);
-        }
-
-        session.setAttribute(Constant.CART_SESSION, cart);
-//        RequestDispatcher rd = request.getRequestDispatcher("shop.jsp");
-//        response.setAttribute("
-//        rd.forward(request, response);
-        session.setAttribute(Constant.CHECK_SESSION, "true");
-        String url = request.getRequestURL().toString();
-//        if(url.contains("DetailServlet")){
-            response.sendRedirect("/BookShop/index.jsp");
-//        } else {
-//            response.sendRedirect(url);
-//        }
-        
+        String id = request.getParameter("id");
+//        BookDao bookDao = new BookDao();
+//        Book book = bookDao.getBookDetail(id);
+        String url = "detail.jsp?id=" + id;
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
